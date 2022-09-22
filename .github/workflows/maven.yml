@@ -22,5 +22,28 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    
     - name: Build with Maven
       run: mvn -B package --file spring3hibernate/pom.xml
+    
+    - name: running command to cat team1.tf file
+      run: cat team1.tf
+    
+    - name: running command to add module team1.tf file
+      run: ./script.sh team1 new_one
+
+    - name: running command to cat team1.tf file
+      run: cat team1.tf
+
+    - name: Now team2
+      run: echo "Now Team-2"
+
+    - name: running command to cat team2.tf file
+      run: cat team2.tf
+    
+    - name: running command to add module team2.tf file
+      run: ./script.sh team2 new_one
+
+    - name: running command to cat team2.tf file
+      run: cat team2.tf
+
