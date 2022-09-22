@@ -30,7 +30,7 @@ jobs:
       run: cat team1.tf
     
     - name: running command to add module team1.tf file
-      run: ./script.sh team1 new_one
+      run: ./script.sh team1 new_one_two
 
     - name: running command to cat team1.tf file
       run: cat team1.tf
@@ -42,7 +42,7 @@ jobs:
       run: cat team2.tf
     
     - name: running command to add module team2.tf file
-      run: ./script.sh team2 new_one
+      run: ./script.sh team2 new_one_one
 
     - name: running command to cat team2.tf file
       run: cat team2.tf
