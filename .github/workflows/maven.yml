@@ -33,8 +33,15 @@ jobs:
     - name: running command to cat team1.tf file
       run: cat team1.tf
 
-    - name: Raising the PR 
+    - name: Pushing the new code to Repository. 
       run: |
-          ls
-          pwd
+          git status
+          git add .
+          git commit -m "Added new ECR code"
+          git push origin <Branch_Name>
+      
+    - name: Pushing the new code to Repository. 
+      run: |
+          gh auth login --with-token < mytoken.txt
+          gh pr create
 
