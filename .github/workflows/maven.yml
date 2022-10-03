@@ -21,27 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     
-    - name: Build with Maven
-      run: mvn -B package --file spring3hibernate/pom.xml
-    
-    - name: running command to cat team1.tf file
-      run: cat team1.tf
-    
-    - name: running command to add module team1.tf file
-      run: ./script.sh team1 new_one
-
-    - name: running command to cat team1.tf file
-      run: cat team1.tf
-
-    - name: Pushing the new code to Repository. 
+    - name: testing values
       run: |
-          git status
-          git add .
-          git commit -m "Added new ECR code"
-          git push origin <Branch_Name>
-      
-    - name: Pushing the new code to Repository. 
-      run: |
-          gh auth login --with-token < mytoken.txt
-          gh pr create
-
+          echo team name is ${{ github.event.client_payload.teamName }}
+          echo new ecr name is ${{ github.event.client_payload.ecrName }}
