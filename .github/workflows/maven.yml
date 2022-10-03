@@ -27,10 +27,10 @@ jobs:
           echo new ecr name is ${{ github.event.client_payload.ecrName }}
     
     - name: curent data in ${{ github.event.client_payload.teamName }}.tf file
-      run: cat ${{ github.event.client_payload.teamName }}
+      run: cat ${{ github.event.client_payload.teamName }}.tf
 
     - name: running command to add module team1.tf file
       run: ./script.sh ${{ github.event.client_payload.teamName }} ${{ github.event.client_payload.ecrName }}
 
     - name: Check if module is added or not in ${{ github.event.client_payload.teamName }}.tf file
-      run: cat ${{ github.event.client_payload.teamName }}
+      run: cat ${{ github.event.client_payload.teamName }}.tf
