@@ -34,3 +34,15 @@ jobs:
 
     - name: Check if module is added or not in ${{ github.event.client_payload.teamName }}.tf file
       run: cat ${{ github.event.client_payload.teamName }}.tf
+
+    - name: Pushing the new code to Repository. 
+      run: |
+          git status
+          git add .
+          git commit -m "Added new ECR code"
+          git push origin ${{ github.event.client_payload.branchName }}
+      
+    - name: Pushing the new code to Repository. 
+      run: |
+          gh auth login --with-token < mytoken.txt
+          gh pr create
